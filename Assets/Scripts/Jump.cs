@@ -5,8 +5,8 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
 
-    public float jump;
-
+    [SerializeField]float jump;
+    [SerializeField] bool isJumping;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -19,10 +19,18 @@ public class Jump : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && !isJumping)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
+            isJumping = true;
+        }
+    }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
         }
     }
 }
