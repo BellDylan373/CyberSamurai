@@ -59,18 +59,17 @@ public class simpMove : MonoBehaviour
         // returns bool to check if touch wall
     private bool IsWall()
     {
+        
         return Physics2D.OverlapCircle(wallCheck.position,0.2f, wallLayer);
+        
     }
     // 
     private void WallSlide()
     {
-        if(IsWall() )
+        if(IsWall() && move != 0f)
         {
-            isWallSliding = true;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
-        }else
-        {
-            isWallSliding = false;
         }
     }
+  
 }
