@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class simpMove : MonoBehaviour
 {
+    #region attributes
     [SerializeField] float move;
     [SerializeField] float speed;
     [SerializeField] bool IsFacingRight;
@@ -13,19 +15,27 @@ public class simpMove : MonoBehaviour
     [SerializeField] float wallSlideSpeed = 2f;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
+    [Header("Weapons")]
+    [SerializeField] projectileLauncher projectileLauncher;
   
     private Vector2 moveInput;
     private Rigidbody2D rb;
    
-
+    #endregion
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         
     }
 
-    // Update is called once per frame
     void Update()
+    {
+                if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            fireProjectile();
+        }
+    }
+    void FixedUpdate()
     {
         #region Basic Movement
         move = Input.GetAxis("Horizontal");
@@ -39,7 +49,7 @@ public class simpMove : MonoBehaviour
         WallSlide();
 
         #endregion
-        
+        projectileLauncher.AimGun(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
     
     private void Turn()
@@ -71,5 +81,14 @@ public class simpMove : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
         }
     }
-  
+  #region Weapon functions
+    public void fireProjectile()
+    {
+        projectileLauncher.launch();
+    }
+
+
+
+
+  #endregion
 }
