@@ -30,13 +30,7 @@ public class Jump : MonoBehaviour
         // check if touchground to reset jump
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Ground"))
-        {
-            isJumping = false;
-        }else
-        {
-            isJumping = true;
-        }
+        
     }
 
     #endregion

@@ -41,5 +41,6 @@ public class Attributes : MonoBehaviour
             Destroy(this);
         }
     }
+    
     #endregion
 }

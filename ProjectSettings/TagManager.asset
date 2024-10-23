@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Wall
   - respawn
+  - Bullet
+  - Turret
   layers:
   - Default
   - TransparentFX
