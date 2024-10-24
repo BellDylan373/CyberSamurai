@@ -6,12 +6,11 @@ TagManager:
   tags:
   - Ground
   - Wall
-  - respawn
   - Turret
   - BulletFriendly
   - Enemy
   - Bullet
-  - Undefined
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

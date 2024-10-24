@@ -5,8 +5,8 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
 #region attributes
-    [SerializeField] public GameObject player;
-    [SerializeField] public GameObject respawnPoint;
+     [SerializeField] public GameObject Player;
+     [SerializeField] public GameObject respawnPoint;
 #endregion
     void Start()
     {
@@ -25,7 +25,7 @@ public class Respawn : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Get over Here!");
-         player.transform.position = respawnPoint.transform.position;
+         Player.transform.position = respawnPoint.transform.position;
         }
        
     }

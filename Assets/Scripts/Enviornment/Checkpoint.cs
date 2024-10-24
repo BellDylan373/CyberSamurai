@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Respawn respawn;
+    [SerializeField] GameObject checkpoint;
+    [SerializeField] bool checkpointVisited = false;
+    void Awake()
     {
-        
+       respawn = GameObject.FindGameObjectWithTag("Respawn").GetComponent<Respawn>(); 
     }
 
     // Update is called once per frame
@@ -15,4 +17,17 @@ public class Checkpoint : MonoBehaviour
     {
         
     }
+
+    #region Collisions
+      void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Player") && checkpointVisited == false)
+        {
+            Debug.Log("CheckPoint HE HA!!");
+            respawn.respawnPoint.transform.position = checkpoint.transform.position;
+            checkpointVisited = true;
+        }
+       
+    }
+    #endregion
 }
