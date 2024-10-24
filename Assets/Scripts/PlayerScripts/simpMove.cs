@@ -9,6 +9,8 @@ public class simpMove : MonoBehaviour
     [Header("Game OBJ")]
     [SerializeField] Attributes Attributes;
     [SerializeField] Bullet bullet;
+    [SerializeField] Hazard hazard;
+    [SerializeField] Pickup pickup;
     [Header("movement")]
     [SerializeField] float move;
     [SerializeField] float speed;
@@ -125,6 +127,15 @@ public class simpMove : MonoBehaviour
              Debug.Log("bang!");
              Destroy(other.gameObject);
              Attributes.health -= bullet.bulletDamage;
+        }
+                 if(other.gameObject.CompareTag("Pickup"))
+        {
+             Debug.Log("goodies!");
+             Destroy(other.gameObject);
+             if(pickup.isHealth == true)
+             {
+                Attributes.health += pickup.healthGain;
+             }
         }
     }
     #endregion

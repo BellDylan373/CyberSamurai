@@ -10,8 +10,9 @@ public class Attributes : MonoBehaviour
     [SerializeField] public bool isPlayer;
     [SerializeField] public bool isDead;
     [SerializeField] public bool cheatingDeath = true;
+    [SerializeField] public float maxHealth;
     [SerializeField] public float health;
-    [SerializeField] public float energy;
+    [SerializeField] public float lives = 1;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -23,16 +24,26 @@ public class Attributes : MonoBehaviour
     void FixedUpdate()
     {
          Death();
+         HealthMax();
+
     }
     #region Health mechanics
  
+    void HealthMax()
+    {
+        if (maxHealth < health)
+        {
+            health = maxHealth;
+        }
+    }
     void Death()
     {
         if(health <= 0)
         {
             isDead = true;
+            lives--;
         }
-        if(isDead == true  && isPlayer)
+        if(isDead == true  && isPlayer )
         {
             Debug.Log("poof");
             SceneManager.LoadScene("SampleScene");

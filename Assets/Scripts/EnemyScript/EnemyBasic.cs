@@ -9,6 +9,8 @@ public class EnemyBasic : MonoBehaviour
     [SerializeField] Attributes Attributes;
     [SerializeField] Bullet bullet;
     [SerializeField] projectileLauncher projectileLauncher;
+    [SerializeField] GameObject pickUpPrefab;
+    [SerializeField] Transform spawnTransform;
     [SerializeField] float spawnTimer = 1f;
     private float timeSinceFired = 0;
     #endregion
@@ -35,6 +37,7 @@ public class EnemyBasic : MonoBehaviour
              if(Attributes.health <= 0){
                 Debug.Log("poof");
                 Destroy(this.gameObject);
+                GameObject newPickup = Instantiate(pickUpPrefab, spawnTransform.position, Quaternion.identity);
              }
         }
 
