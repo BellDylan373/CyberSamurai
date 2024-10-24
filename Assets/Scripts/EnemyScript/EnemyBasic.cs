@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class EnemyBasic : MonoBehaviour
 {
-    #region Attributes
+      #region Attributes
     [Header("Game OBJ")]
     [SerializeField] Attributes Attributes;
     [SerializeField] Bullet bullet;
@@ -13,37 +12,19 @@ public class Turret : MonoBehaviour
     [SerializeField] float spawnTimer = 1f;
     private float timeSinceFired = 0;
     #endregion
-    // Start is called before the first frame update
+    
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {  
-        timeSinceFired += Time.fixedDeltaTime;
-        if(timeSinceFired >= spawnTimer)
-        {
-        FireProjectile();
-        timeSinceFired = 0;
-        }
-    }
-#region shooting script
-        // create projectile over time
-    public void FireProjectile()
-    {
-
-            projectileLauncher.launch();
-
-        
-    }
-    void ShootCycle()
+    void Update()
     {
         
     }
-#endregion
-     #region Collisions
+
+        #region Collisions
       void OnCollisionEnter2D(Collision2D other)
     {
          if(other.gameObject.CompareTag("BulletFriendly"))
@@ -56,10 +37,7 @@ public class Turret : MonoBehaviour
                 Destroy(this.gameObject);
              }
         }
-        if(other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Open fire!!!");
-        }
+
     }
     #endregion
 }
