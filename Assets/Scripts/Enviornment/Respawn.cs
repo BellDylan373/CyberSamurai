@@ -24,7 +24,7 @@ public class Respawn : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Get over Here!")
+            Debug.Log("Get over Here!");
          player.transform.position = respawnPoint.transform.position;
         }
        
