@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] public float bulletDamage =20;
     void Start()
     {
         
@@ -16,9 +17,6 @@ public class Bullet : MonoBehaviour
         
     }
       void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("Turret"))
-        {
-             Debug.Log("bang!");
-        }
+       Destroy(this.gameObject);
       }
 }

@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Attributes : MonoBehaviour
 {
     #region Attributes
-    [SerializeField] bool isPlayer;
-    [SerializeField] bool isDead;
-    [SerializeField] float health;
-    [SerializeField] float energy;
+    [SerializeField] Bullet bullet;
+    [SerializeField] public bool isPlayer;
+    [SerializeField] public bool isDead;
+    [SerializeField] public bool cheatingDeath = true;
+    [SerializeField] public float health;
+    [SerializeField] public float energy;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -22,23 +25,17 @@ public class Attributes : MonoBehaviour
          Death();
     }
     #region Health mechanics
-    void CheatDeath()
-    {
-        if(isPlayer == true &&  health <= 10 && health > 0 )
-        {
-            health = 1;
-        }
-    }
+ 
     void Death()
     {
         if(health <= 0)
         {
             isDead = true;
         }
-        if(isDead == true)
+        if(isDead == true  && isPlayer)
         {
             Debug.Log("poof");
-            Destroy(this);
+            SceneManager.LoadScene("SampleScene");
         }
     }
     

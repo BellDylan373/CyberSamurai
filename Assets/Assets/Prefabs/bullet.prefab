@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bullet
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 562087608434ef74d8183f593f171b8c, type: 3}
+      propertyPath: m_TagString
+      value: BulletFriendly
+      objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 562087608434ef74d8183f593f171b8c, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -183,3 +187,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881e7bb030af79c499f803dedd71f328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 9062207159684386208}
+  bulletDamage: 20

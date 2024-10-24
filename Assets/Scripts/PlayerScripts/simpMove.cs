@@ -6,6 +6,10 @@ using UnityEngine;
 public class simpMove : MonoBehaviour
 {
     #region attributes
+    [Header("Game OBJ")]
+    [SerializeField] Attributes Attributes;
+    [SerializeField] Bullet bullet;
+    [Header("movement")]
     [SerializeField] float move;
     [SerializeField] float speed;
     [SerializeField] bool IsFacingRight;
@@ -15,8 +19,13 @@ public class simpMove : MonoBehaviour
     [SerializeField] float wallSlideSpeed = 2f;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
+    [Space(5)]
     [Header("Weapons")]
     [SerializeField] projectileLauncher projectileLauncher;
+     [Space(5)]
+    [Header("Jump")]
+    [SerializeField]float jump;
+    [SerializeField] bool isJumping;
   
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -33,8 +42,20 @@ public class simpMove : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             fireProjectile();
+            
+        }
+        #region Jump  
+        if(Input.GetButtonDown("Jump") && !isJumping)
+        {
+            rb.AddForce(new Vector2(rb.velocity.x, jump));
+            isJumping = true;
         }
     }
+        // check if touchground to reset jump
+
+
+    #endregion
+    
     void FixedUpdate()
     {
         #region Basic Movement
@@ -91,4 +112,20 @@ public class simpMove : MonoBehaviour
 
 
   #endregion
+  #region Collisions
+      void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Ground"))
+        {
+             Debug.Log("hmmmm yes this ground is made of ground.");
+            isJumping = false;
+        }
+         if(other.gameObject.CompareTag("Bullet"))
+        {
+             Debug.Log("bang!");
+             Destroy(other.gameObject);
+             Attributes.health -= bullet.bulletDamage;
+        }
+    }
+    #endregion
 }
