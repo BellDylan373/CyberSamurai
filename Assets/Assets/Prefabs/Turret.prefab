@@ -61,11 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c287bcc35d85eca4f9d56034e24b2792, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.088
+      value: 5.646
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c287bcc35d85eca4f9d56034e24b2792, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.62
+      value: -1.817
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c287bcc35d85eca4f9d56034e24b2792, type: 3}
       propertyPath: m_LocalPosition.z
@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c287bcc35d85eca4f9d56034e24b2792, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c287bcc35d85eca4f9d56034e24b2792, type: 3}
       propertyPath: m_LocalRotation.x
@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c287bcc35d85eca4f9d56034e24b2792, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c287bcc35d85eca4f9d56034e24b2792, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c287bcc35d85eca4f9d56034e24b2792, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c287bcc35d85eca4f9d56034e24b2792, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -145,11 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af4e4f5f668c7349a92e7d6c6625e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: -7111593592008211492, guid: fc6a3327a0069584195eeff06b0ae63a, type: 3}
   isPlayer: 0
   isDead: 0
   cheatingDeath: 0
-  health: 5
+  health: 25
   energy: 0
 --- !u!114 &9057769726230266757
 MonoBehaviour:
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1636437591442102025, guid: 6f4afc4affd16cd4196bdc47f032eab1, type: 3}
   spawnTransform: {fileID: 2282498997463201993}
-  projectileSpeed: 0
+  projectileSpeed: 7
 --- !u!114 &4462613630517939554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,9 +217,9 @@ BoxCollider2D:
   m_Offset: {x: 0.030000001, y: 0.115}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4, y: -0.047619052}
-    oldSize: {x: 0.3, y: 0.21}
-    newSize: {x: 0.3, y: 0.21}
+    pivot: {x: 1.0952381, y: -0.2}
+    oldSize: {x: 0.21, y: 0.3}
+    newSize: {x: 0.21, y: 0.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
