@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Bullet
   - Checkpoint
+  - Harzard
+  - Pickup
   layers:
   - Default
   - TransparentFX
