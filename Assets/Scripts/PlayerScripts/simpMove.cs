@@ -106,8 +106,11 @@ public class simpMove : MonoBehaviour
     }
   #region Weapon functions
     public void fireProjectile()
-    {
-        projectileLauncher.launch();
+    {   
+        if(Time.timeScale != 0)
+        {
+            projectileLauncher.launch();
+        }
     }
 
 
