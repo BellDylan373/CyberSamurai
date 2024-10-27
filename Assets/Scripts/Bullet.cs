@@ -16,11 +16,7 @@ public class Bullet : MonoBehaviour
     {
         
     }
-      void OnCollisionnter2D(Collision2D other){
-        if(other.gameObject.CompareTag("Ground"))
-        {
-          Destroy(this.gameObject);
-        }
-     
+      void OnTriggerEnter2D(Collider2D other){
+       Destroy(this.gameObject);
       }
 }
