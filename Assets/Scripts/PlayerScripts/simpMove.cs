@@ -28,6 +28,8 @@ public class simpMove : MonoBehaviour
     [Header("Jump")]
     [SerializeField]float jump;
     [SerializeField] bool isJumping;
+    
+  
   
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -51,6 +53,10 @@ public class simpMove : MonoBehaviour
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
             isJumping = true;
+        }
+        if(isJumping == true)
+        {
+            this.transform.parent = null;
         }
     }
         // check if touchground to reset jump
@@ -123,6 +129,7 @@ public class simpMove : MonoBehaviour
         if(other.gameObject.CompareTag("Ground"))
         {
              Debug.Log("hmmmm yes this ground is made of ground.");
+            this.transform.parent = other.transform;
             isJumping = false;
         }
          if(other.gameObject.CompareTag("Bullet"))
@@ -139,7 +146,12 @@ public class simpMove : MonoBehaviour
              {
                 Attributes.health += pickup.healthGain;
              }
+              
         }
+
     }
+
+            // becomes parent again
+
     #endregion
 }
