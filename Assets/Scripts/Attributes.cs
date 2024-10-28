@@ -46,7 +46,7 @@ public class Attributes : MonoBehaviour
         if(isDead == true  && isPlayer )
         {
             Debug.Log("poof");
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Tutorial");
         }
     }
     
