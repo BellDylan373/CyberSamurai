@@ -28,6 +28,7 @@ public class simpMove : MonoBehaviour
     [Header("Jump")]
     [SerializeField]float jump;
     [SerializeField] bool isJumping;
+    [SerializeField] AudioSource audioSource;
     
   
   
