@@ -7,7 +7,7 @@ public class Checkpoint : MonoBehaviour
     private Respawn respawn;
     [SerializeField] GameObject checkpoint;
     [SerializeField] bool checkpointVisited = false;
-    void Awake()
+    void Start()
     {
        respawn = GameObject.FindGameObjectWithTag("Respawn").GetComponent<Respawn>(); 
     }
