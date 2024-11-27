@@ -304,6 +304,11 @@ Transform:
   - {fileID: 451680717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &264878307 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1160356261127867848, guid: 0903b95e6d3176b4a94bc1a725ed1963, type: 3}
+  m_PrefabInstance: {fileID: 705740644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &338730917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4384,6 +4389,14 @@ PrefabInstance:
       propertyPath: jump
       value: 575
       objectReference: {fileID: 0}
+    - target: {fileID: 1083624651277286767, guid: 0903b95e6d3176b4a94bc1a725ed1963, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 264878307}
+    - target: {fileID: 1160356261127867848, guid: 0903b95e6d3176b4a94bc1a725ed1963, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 6777934210617851504, guid: aad401a3e0496ee49929bf11ebfe7195, type: 3}
     - target: {fileID: 3626916397498700004, guid: 0903b95e6d3176b4a94bc1a725ed1963, type: 3}
       propertyPath: m_SortingOrder
       value: 1

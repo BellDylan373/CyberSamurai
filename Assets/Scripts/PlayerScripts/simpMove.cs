@@ -8,6 +8,7 @@ public class simpMove : MonoBehaviour
     #region attributes
     [Header("Game OBJ")]
     [SerializeField] Attributes Attributes;
+    [SerializeField] Animator animator;
     [SerializeField] Bullet bullet;
     [SerializeField] Hazard hazard;
     [SerializeField] Pickup pickup;
@@ -59,6 +60,7 @@ public class simpMove : MonoBehaviour
         {
             this.transform.parent = null;
         }
+        
     }
         // check if touchground to reset jump
 
@@ -71,7 +73,7 @@ public class simpMove : MonoBehaviour
         move = Input.GetAxis("Horizontal");
         moveInput.x = move;
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
-
+        animator.SetFloat("speed", Mathf.Abs(move));
         if (rb.velocity.x != 0)
 		{
         	CheckDirectionToFace(moveInput.x > 0);
