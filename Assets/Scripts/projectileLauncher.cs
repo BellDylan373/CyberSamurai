@@ -25,7 +25,7 @@ public class projectileLauncher : MonoBehaviour
     {
         GameObject newProjectile = Instantiate(projectilePrefab, spawnTransform.position, Quaternion.identity);
         newProjectile.GetComponent<Rigidbody2D>().velocity = transform.up * projectileSpeed;
-        
+
          Destroy(newProjectile,2);
     }
 

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    [SerializeField] float count = 3f;
-    [SerializeField] simpMove playerMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +24,6 @@ public class Pause : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             Time.timeScale = Time.timeScale/2;
-            
         }
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
