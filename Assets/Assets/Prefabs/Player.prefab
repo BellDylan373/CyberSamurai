@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 1364277711
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -116513146488537082, guid: 3bcc3dc5a96bc734da3f7a592d7eefe5, type: 3}
+  m_Sprite: {fileID: -1225938931517661475, guid: aad401a3e0496ee49929bf11ebfe7195, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attributes: {fileID: 6530746120068991408}
+  animator: {fileID: 0}
   bullet: {fileID: -8138632882646184087, guid: 6f4afc4affd16cd4196bdc47f032eab1, type: 3}
   hazard: {fileID: 0}
   pickup: {fileID: -8857818847387059320, guid: c26ed9269dc064948b5440f918001cbb, type: 3}
@@ -140,6 +141,7 @@ MonoBehaviour:
   projectileLauncher: {fileID: 7375979587651280210}
   jump: 550
   isJumping: 0
+  audioSource: {fileID: 0}
 --- !u!61 &3521411816246289144
 BoxCollider2D:
   m_ObjectHideFlags: 0

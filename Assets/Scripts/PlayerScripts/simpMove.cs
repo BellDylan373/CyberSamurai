@@ -151,6 +151,12 @@ public class simpMove : MonoBehaviour
              }
               
         }
+         if(other.gameObject.CompareTag("Hazard"))
+        {
+             Debug.Log("Ouch!");
+             
+             Attributes.health -= hazard.damage;
+        }
 
     }
 

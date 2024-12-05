@@ -11,10 +11,10 @@ TagManager:
   - Enemy
   - Bullet
   - Checkpoint
-  - Harzard
   - Pickup
   - TurnPoint
   - MovGround
+  - Hazard
   layers:
   - Default
   - TransparentFX

@@ -1,26 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static bool GamePaused = false;
 
-    // Update is called once per frame
+    [SerializeField] GameObject pauseMenuUI;
+    void Awake()
+    {
+        pauseMenuUI.SetActive(false);
+    }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale =0;
+            if(GamePaused)
+            {
+                pauseMenuUI.SetActive(false);
+                Time.timeScale =1;
+                GamePaused = false;
+            } else 
+            {
+                pauseMenuUI.SetActive(true);
+                Time.timeScale = 0;
+                GamePaused = true;
+            }
+
         }
-         if(Input.GetKeyDown(KeyCode.P) )
-        {
-            Time.timeScale =1;
-        }
+
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             Time.timeScale = Time.timeScale/2;
@@ -29,5 +39,23 @@ public class Pause : MonoBehaviour
         {
             Time.timeScale =Time.timeScale*2;
         }
+    }
+
+     public void ResumeGame()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale =1;
+        GamePaused = false;
+    }
+    public void PauseGame()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0;
+        GamePaused = true;
+    }
+
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
