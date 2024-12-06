@@ -119,6 +119,7 @@ public class simpMove : MonoBehaviour
         if(Time.timeScale != 0)
         {
             projectileLauncher.launch();
+            audioSource.Play();
         }
     }
 
