@@ -157,6 +157,11 @@ public class simpMove : MonoBehaviour
              Debug.Log("Ouch!");
              Attributes.health -= hazard.damage;
         }
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+             Debug.Log("Ouch!");
+             Attributes.health -= 10;
+        }
 
     }
 
